@@ -1,0 +1,126 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@theme inline {
+  --color-background: #0a0a0a;
+  --color-foreground: #ffffff;
+  --color-surface: #121212;
+  --color-muted-surface: #1f1f1f;
+  --color-border-subtle: #262626;
+  --color-primary: #8f0000;
+  --color-primary-bright: #c80000;
+  --color-muted: #999999;
+
+  --font-sans: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-anton), "Anton", Impact, ui-sans-serif, sans-serif;
+
+  --radius-none: 0px;
+}
+
+:root {
+  color-scheme: dark;
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --card: #121212;
+  --primary: #8f0000;
+  --primary-bright: #c80000;
+  --border: #262626;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #8f0000;
+  color: #ffffff;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+}
+
+/* Custom Leaflet brutalist sharp theme overrides */
+.leaflet-container {
+  background: #121212 !important;
+  font-family: var(--font-sans) !important;
+  z-index: 10;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: #0a0a0a !important;
+  color: #ffffff !important;
+  border-radius: 0px !important;
+  border: 1px solid #262626 !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7) !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  min-width: 240px;
+}
+
+.leaflet-popup-close-button {
+  color: #ffffff !important;
+  background: #8f0000 !important;
+  width: 24px !important;
+  height: 24px !important;
+  line-height: 22px !important;
+  text-align: center !important;
+  top: 0 !important;
+  right: 0 !important;
+  font-size: 16px !important;
+}
+
+.leaflet-bar {
+  border-radius: 0px !important;
+  border: 1px solid #262626 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+}
+
+.leaflet-bar a {
+  border-radius: 0px !important;
+  background-color: #ffffff !important;
+  color: #0a0a0a !important;
+  font-weight: 700 !important;
+}
+
+.leaflet-bar a:hover {
+  background-color: #8f0000 !important;
+  color: #ffffff !important;
+}
+
+.custom-crimson-pin {
+  background: transparent;
+  border: none;
+}
+
+@keyframes subtlePulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.72;
+  }
+}
+
+.animate-strip-pulse {
+  animation: subtlePulse 2.6s ease-in-out infinite;
+}
